@@ -4,7 +4,7 @@ const fs = require('fs');
 const url = require('url');
 const path = require('path');
 
-const HTTP_PORT = 3000;
+const HTTP_PORT = 10000;
 
 const mimeTypes = {
   "html": "text/html",
