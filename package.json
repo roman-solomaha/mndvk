@@ -1,0 +1,11 @@
+{
+  "name": "mondavoshka",
+  "description": "a really cool game",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "ws": "^8.17.0"
+  }
+}
