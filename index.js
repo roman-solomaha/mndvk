@@ -89,6 +89,8 @@ wss.on('connection', (ws) => {
 
     if (req?.name === 'clean') {
       state = { ...initialState };
+      console.log('clean');
+      console.log('clients:', clients.length);
       sendAll(ws, JSON.stringify({ name: 'clean' }));
       return;
     }
@@ -100,6 +102,8 @@ wss.on('connection', (ws) => {
       }
       ws.userID = req.userID;
       clients.push(ws);
+      console.log('connect:', req.userID);
+      console.log('clients:', clients.length);
       return;
     }
 
@@ -114,6 +118,7 @@ wss.on('connection', (ws) => {
     const removeClientIndex = clients.findIndex((client) => client.user === ws.user);
     if (removeClientIndex > -1) {
       clients.splice(removeClientIndex, 1);
+      console.log('clients:', clients.length);
     }
   })
 });
